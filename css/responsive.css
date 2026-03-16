@@ -1,0 +1,205 @@
+/* ==============================================
+   RESPONSIVE STYLES
+   Mobile-first breakpoints:
+     - sm:  480px
+     - md:  768px
+     - lg:  1024px
+     - xl:  1200px
+   ============================================== */
+
+/* ------------------------------------------
+   TABLET  (≤ 1024px)
+------------------------------------------ */
+@media (max-width: 1024px) {
+
+  .nav-list > li > a {
+    padding: 1rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ------------------------------------------
+   TABLET / SMALL DESKTOP  (≤ 768px)
+------------------------------------------ */
+@media (max-width: 768px) {
+
+  /* Announcement bar wraps */
+  .announcement-bar {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+    padding: 0.75rem var(--spacing-sm);
+  }
+
+  .announcement-close {
+    position: static;
+    transform: none;
+    align-self: flex-end;
+  }
+
+  /* Hero shrinks */
+  .hero {
+    min-height: 280px;
+  }
+
+  .hero-logo {
+    width: 130px;
+    height: 130px;
+  }
+
+  /* Nav becomes scrollable single row */
+  .nav-list {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-list > li > a {
+    padding: 0.9rem 0.7rem;
+    font-size: 0.72rem;
+  }
+
+  /* Stack all two-col grids */
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-row {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-item img,
+  .photo-placeholder {
+    height: 220px;
+  }
+
+  /* Faculty: 2 columns on tablet */
+  .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .section {
+    padding: var(--spacing-md) 0;
+  }
+}
+
+/* ------------------------------------------
+   MOBILE  (≤ 480px)
+------------------------------------------ */
+@media (max-width: 480px) {
+
+  .hero {
+    min-height: 220px;
+  }
+
+  .hero-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .hero-logo-text {
+    font-size: 0.95rem;
+  }
+
+  /* Nav collapses to hamburger — see main.js for toggle logic */
+  .main-nav {
+    position: sticky;
+    top: 0;
+  }
+
+  .nav-list {
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .nav-list > li > a {
+    font-size: 0.68rem;
+    padding: 0.8rem 0.5rem;
+  }
+
+  /* Faculty: 1 column on mobile */
+  .faculty-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faculty-photo-wrap img,
+  .faculty-photo-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+
+  .section-headline {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  /* Modal fills screen */
+  .modal {
+    border-radius: 24px 24px 0 0;
+    padding: 2rem 1.25rem 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+
+  /* News ticker smaller */
+  .news-ticker {
+    font-size: 0.75rem;
+    padding: 0.4rem 1rem 0.4rem 0.75rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  /* Contact form full width */
+  .contact-form input {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+
+/* ------------------------------------------
+   PRINT  (strip colors + animations)
+------------------------------------------ */
+@media print {
+  .announcement-bar,
+  .main-nav,
+  .social-bar,
+  .modal-overlay,
+  .news-ticker {
+    display: none !important;
+  }
+
+  .section--orange {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}

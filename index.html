@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[STUDIO NAME]: A [CITY] Music School</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- =============================================
+       ANNOUNCEMENT BAR
+  ============================================= -->
+  <div class="announcement-bar" id="announcementBar">
+    <button class="announcement-tag">[PROMO TAG]</button>
+    <span class="announcement-text">[Promotional message — e.g. "Early Bird Discount ends March 15th!"]</span>
+    <a href="#camps" class="announcement-link">LEARN MORE</a>
+    <button class="announcement-close" onclick="document.getElementById('announcementBar').style.display='none'" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- =============================================
+       HERO SECTION
+  ============================================= -->
+  <header class="hero">
+    <!-- Social Icons — top right -->
+    <div class="social-bar">
+      <a href="#" class="social-icon" aria-label="Instagram">
+        <!-- Replace src with your icon path -->
+        <img src="assets/icons/instagram.svg" alt="Instagram" />
+      </a>
+      <a href="#" class="social-icon" aria-label="Threads">
+        <img src="assets/icons/threads.svg" alt="Threads" />
+      </a>
+      <a href="#" class="social-icon" aria-label="YouTube">
+        <img src="assets/icons/youtube.svg" alt="YouTube" />
+      </a>
+      <a href="#" class="social-icon" aria-label="Facebook">
+        <img src="assets/icons/facebook.svg" alt="Facebook" />
+      </a>
+      <a href="#" class="social-icon" aria-label="Twitter / X">
+        <img src="assets/icons/twitter.svg" alt="Twitter" />
+      </a>
+    </div>
+
+    <!-- Music note background pattern (generated via CSS + SVG) -->
+    <div class="hero-notes" aria-hidden="true">
+      <span class="note note-1">&#9835;</span>
+      <span class="note note-2">&#9833;</span>
+      <span class="note note-3">&#9834;</span>
+      <span class="note note-4">&#9835;</span>
+      <span class="note note-5">&#9833;</span>
+      <span class="note note-6">&#9834;</span>
+      <span class="note note-7">&#9835;</span>
+      <span class="note note-8">&#9833;</span>
+    </div>
+
+    <!-- Logo / Studio name badge -->
+    <div class="hero-logo">
+      <span class="hero-logo-text">[STUDIO<br/>NAME]</span>
+    </div>
+  </header>
+
+  <!-- =============================================
+       MAIN NAVIGATION
+  ============================================= -->
+  <nav class="main-nav" id="mainNav">
+    <ul class="nav-list">
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#services">SERVICES/RATES</a></li>
+      <li><a href="#faculty">FACULTY</a></li>
+      <li><a href="#info">INFO</a></li>
+      <li class="has-dropdown">
+        <a href="#classes">CLASSES/EVENTS</a>
+        <ul class="dropdown">
+          <li><a href="#group-classes">Group Classes</a></li>
+          <li><a href="#studio-classes">Studio Classes</a></li>
+          <li><a href="#events">Events &amp; Concerts</a></li>
+        </ul>
+      </li>
+      <li><a href="#contact">ENROLL/CONTACT</a></li>
+      <li><a href="#portal">STUDENT PORTAL</a></li>
+      <li><a href="#store">ONLINE STORE</a></li>
+      <li class="has-dropdown">
+        <a href="#">MORE</a>
+        <ul class="dropdown">
+          <li><a href="#camps">Summer Camps</a></li>
+          <li><a href="#recitals">Recitals</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- =============================================
+       ABOUT SECTION
+  ============================================= -->
+  <section class="section section--orange" id="about">
+    <div class="container">
+      <h2 class="section-headline">
+        We are a [ADJECTIVE], independent music school in [NEIGHBORHOOD] of [CITY]. Come #[HASHTAG] with us!
+      </h2>
+      <p class="section-body">
+        Founded in [YEAR] by [FOUNDER 1], [FOUNDER 2], and [FOUNDER 3], <em>[STUDIO NAME]</em> offers high quality music education through private music lessons, group music classes and workshops, and summer music camps. We strive to [MISSION STATEMENT], and truly believe that people of all ages and skill levels can discover the joy of music!
+      </p>
+    </div>
+
+    <!-- Photo Gallery Row -->
+    <div class="photo-row">
+      <div class="photo-item">
+        <!-- Replace with: assets/images/gallery/photo-1.jpg -->
+        <div class="photo-placeholder">
+          <span>Gallery Photo 1<br/>[600 × 400 px]</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <span>Gallery Photo 2<br/>[600 × 400 px]</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <span>Gallery Photo 3<br/>[600 × 400 px]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SERVICES & RATES SECTION
+  ============================================= -->
+  <section class="section section--white" id="services">
+    <div class="container">
+      <h2 class="section-title">Services &amp; Rates</h2>
+      <div class="two-col">
+
+        <!-- Left column: What we offer -->
+        <div class="col">
+          <h3 class="col-heading col-heading--orange">We Offer:</h3>
+
+          <h4>Private Music Lessons In:</h4>
+          <p><em>Private Music Lessons offered for <strong>ages [AGE RANGE] through adult in:</strong></em></p>
+          <ul class="instrument-list">
+            <li>[Instrument 1]</li>
+            <li>[Instrument 2]</li>
+            <li>[Instrument 3]</li>
+            <li>[Instrument 4]</li>
+            <li>[Instrument 5 (Acoustic &amp; Electric)]</li>
+            <li>[Instrument 6]</li>
+            <li>[Instrument 7]</li>
+            <li>[Instrument 8]</li>
+            <li>[Instrument 9]</li>
+            <li>[Instrument 10]</li>
+          </ul>
+
+          <h4>Group Music Classes:</h4>
+          <ul class="instrument-list">
+            <li>[Group Class 1]</li>
+            <li>[Group Class 2]</li>
+            <li>[Group Class 3]</li>
+          </ul>
+
+          <h4>Music Workshops &amp; Seminars</h4>
+          <h4>Summer Music Camps</h4>
+        </div>
+
+        <!-- Right column: Pricing -->
+        <div class="col">
+          <h3 class="col-heading col-heading--orange">
+            <a href="#contact">Contact Us</a> for Scheduling:
+          </h3>
+
+          <h4 class="rate-category">Private Music Lessons:</h4>
+          <ul class="rate-list">
+            <li>30-Minute Private Lessons – $[PRICE]/month</li>
+            <li>45-Minute Private Lessons – $[PRICE]/month</li>
+            <li>60-Minute Private Lessons – $[PRICE]/month</li>
+          </ul>
+
+          <h4 class="rate-category">Group Music Classes:</h4>
+          <ul class="rate-list">
+            <li>Range from $[MIN] – $[MAX] depending on the duration/number of class sessions.</li>
+          </ul>
+
+          <h4 class="rate-category">Music Workshops &amp; Seminars:</h4>
+          <ul class="rate-list">
+            <li>[Workshop pricing info]</li>
+          </ul>
+
+          <h4 class="rate-category">Summer Music Camps:</h4>
+          <ul class="rate-list">
+            <li>[Camp pricing info]</li>
+          </ul>
+
+          <p class="rate-note">
+            [Any additional pricing notes or policies go here.]
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FACULTY SECTION
+  ============================================= -->
+  <section class="section section--orange" id="faculty">
+    <div class="container">
+      <h2 class="section-title section-title--white">Our Faculty</h2>
+
+      <div class="faculty-grid">
+
+        <!-- Faculty Card — repeat for each faculty member -->
+        <article class="faculty-card">
+          <div class="faculty-photo-wrap">
+            <!-- Replace with: assets/images/faculty/faculty-1.jpg (150×150 px recommended) -->
+            <div class="faculty-photo-placeholder">
+              <span>Photo<br/>[150×150]</span>
+            </div>
+          </div>
+          <h3 class="faculty-name">[Faculty Member 1 Name]</h3>
+          <h4 class="faculty-instrument">[Instrument] Faculty</h4>
+          <p class="faculty-bio">
+            [Faculty bio — describe background, training, teaching experience, performance highlights, and teaching philosophy. Aim for 3–5 paragraphs.]
+          </p>
+        </article>
+
+        <article class="faculty-card">
+          <div class="faculty-photo-wrap">
+            <div class="faculty-photo-placeholder">
+              <span>Photo<br/>[150×150]</span>
+            </div>
+          </div>
+          <h3 class="faculty-name">[Faculty Member 2 Name]</h3>
+          <h4 class="faculty-instrument">[Instrument] Faculty</h4>
+          <p class="faculty-bio">
+            [Faculty bio — describe background, training, teaching experience, performance highlights, and teaching philosophy. Aim for 3–5 paragraphs.]
+          </p>
+        </article>
+
+        <article class="faculty-card">
+          <div class="faculty-photo-wrap">
+            <div class="faculty-photo-placeholder">
+              <span>Photo<br/>[150×150]</span>
+            </div>
+          </div>
+          <h3 class="faculty-name">[Faculty Member 3 Name]</h3>
+          <h4 class="faculty-instrument">[Instrument] Faculty</h4>
+          <p class="faculty-bio">
+            [Faculty bio — describe background, training, teaching experience, performance highlights, and teaching philosophy. Aim for 3–5 paragraphs.]
+          </p>
+        </article>
+
+        <!-- Add more <article class="faculty-card"> blocks as needed -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       INFO SECTION
+  ============================================= -->
+  <section class="section section--white" id="info">
+    <div class="container">
+      <h2 class="section-title">General Info</h2>
+
+      <div class="info-block">
+        <h3>Lessons &amp; Enrollment:</h3>
+        <ul>
+          <li>[Info point 1 — e.g. billing cycle, scheduling policy]</li>
+          <li>[Info point 2]</li>
+          <li>[Info point 3]</li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h3>Location &amp; Hours:</h3>
+        <ul>
+          <li>[STUDIO ADDRESS]</li>
+          <li>[CITY, STATE ZIP]</li>
+          <li>Open by appointment only.</li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h3>Cancellation Policy:</h3>
+        <ul>
+          <li>[Cancellation policy details]</li>
+          <li>[Make-up lesson policy]</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SUMMER CAMPS SECTION
+  ============================================= -->
+  <section class="section section--white" id="camps">
+    <div class="container">
+      <h2 class="section-title">Summer Music Camps</h2>
+
+      <div class="info-block">
+        <h3>Enrollment:</h3>
+        <ul>
+          <li>We accept enrollment for Summer Music Camps on a rolling basis. Enrollment for most camps closes one week prior to the camp start date.</li>
+          <li>Space in camps is limited &amp; students will be enrolled on a first-come, first-served basis.</li>
+          <li><a href="#contact">Click here</a> for our current Summer Music Camps.</li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h3>Tuition:</h3>
+        <ul>
+          <li>Tuition for Summer Music Camps is paid online during our online enrollment process.</li>
+          <li>Your full camp tuition includes a non-refundable $[DEPOSIT] deposit.</li>
+          <li>[Any additional tuition policies]</li>
+        </ul>
+      </div>
+
+      <hr class="divider" />
+
+      <h3 class="subsection-title">Summer [YEAR] Music Camp:</h3>
+      <p class="subsection-lead">
+        <strong>Enrollment is open for Summer [YEAR] Music Camp! Come #[HASHTAG] all summer long!</strong>
+      </p>
+      <p>Click the camp name below for full information.</p>
+
+      <div class="two-col camps-grid">
+        <div class="col">
+          <h4 class="camp-name"><a href="#">[Camp Name 1]</a></h4>
+          <p class="camp-type"><em>[Camp Type, e.g. Collaborative Music Camp]</em></p>
+          <ul class="camp-details">
+            <li>[Start Date] – [End Date], [Time AM/PM]</li>
+            <li>Camp Final Showcase: [Date], [Time]</li>
+            <li>For Students in Grades [X–Y]</li>
+            <li>Tuition: $[PRICE]</li>
+            <li><strong>[Enrollment status]</strong></li>
+          </ul>
+          <a href="#contact" class="camp-more">More Details –&gt;</a>
+
+          <h4 class="camp-name"><a href="#">[Camp Name 2]</a></h4>
+          <p class="camp-type"><em>[Camp Type]</em></p>
+          <ul class="camp-details">
+            <li>[Start Date] – [End Date], [Time AM/PM]</li>
+            <li>For Students in Grades [X–Y]</li>
+            <li>Tuition: $[PRICE]</li>
+            <li><strong>[Enrollment status]</strong></li>
+          </ul>
+          <a href="#contact" class="camp-more">More Details –&gt;</a>
+        </div>
+
+        <div class="col">
+          <h4 class="col-heading col-heading--orange">For Camp:</h4>
+          <ul class="rate-list">
+            <li>Extended care available.</li>
+            <li>Tuition: $[PRICE]</li>
+            <li>[Other camp amenity]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       GROUP CLASSES SECTION
+  ============================================= -->
+  <section class="section section--white" id="group-classes">
+    <div class="container">
+      <h2 class="section-title">Group Classes</h2>
+      <p>To enroll in a class, fill out our <a href="#contact" class="link-orange">Enrollment Form</a>, specifying which class you're interested in.</p>
+
+      <div class="two-col">
+        <div class="col">
+
+          <h4 class="camp-name"><a href="#">[Group Class 1 Name]</a></h4>
+          <ul class="camp-details">
+            <li>Starting: [Day], [Month] [Date], [YEAR]</li>
+            <li>[X] Session Class</li>
+            <li>[Days], [Start Time] – [End Time]</li>
+            <li>For Students in Grades [X–Y]</li>
+            <li>Tuition: $[PRICE]</li>
+            <li><strong>[Enrollment status]</strong></li>
+          </ul>
+          <a href="#contact" class="camp-more">More Details –&gt;</a>
+
+          <h4 class="camp-name"><a href="#">[Group Class 2 Name]</a></h4>
+          <ul class="camp-details">
+            <li>Starting: [Day], [Month] [Date], [YEAR]</li>
+            <li>[X] Session Class</li>
+            <li>[Days], [Start Time] – [End Time]</li>
+            <li>For Students in Grades [X–Y]</li>
+            <li>Tuition: $[PRICE]</li>
+            <li><strong>[Enrollment status]</strong></li>
+          </ul>
+          <a href="#contact" class="camp-more">More Details –&gt;</a>
+
+        </div>
+        <div class="col">
+
+          <h4 class="camp-name"><a href="#">[Group Class 3 Name]</a></h4>
+          <ul class="camp-details">
+            <li>Starting: [Day], [Month] [Date], [YEAR]</li>
+            <li>[X] Session Class</li>
+            <li>[Days], [Start Time] – [End Time]</li>
+            <li>Tuition: $[PRICE]</li>
+            <li><strong>[Enrollment status]</strong></li>
+          </ul>
+          <a href="#contact" class="camp-more">More Details –&gt;</a>
+
+          <h4 class="camp-name"><a href="#">[Group Class 4 Name]</a></h4>
+          <ul class="camp-details">
+            <li>Starting: [Day], [Month] [Date], [YEAR]</li>
+            <li>[X] Session Class</li>
+            <li>[Days], [Start Time] – [End Time]</li>
+            <li>Tuition: $[PRICE]</li>
+            <li><strong>[Enrollment status]</strong></li>
+          </ul>
+          <a href="#contact" class="camp-more">More Details –&gt;</a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       STUDIO CLASSES SECTION
+  ============================================= -->
+  <section class="section section--white" id="studio-classes">
+    <div class="container">
+      <h2 class="section-title">[Month] Studio Classes:</h2>
+      <p class="note-small">*For current [Studio Name] Private Lesson Students only.</p>
+
+      <div class="studio-date-block">
+        <h4>[Day], [Month] [Date], [YEAR]</h4>
+        <ul class="camp-details">
+          <li>Kids Studio Class A (Ages [X–Y]): [Start Time] – [End Time]</li>
+          <li>Kids Studio Class B (Ages [Y+]): [Start Time] – [End Time]</li>
+          <li>Adult Studio Class: [Start Time] – [End Time]</li>
+        </ul>
+      </div>
+
+      <div class="studio-date-block">
+        <h4>[Day], [Month] [Date], [YEAR]</h4>
+        <ul class="camp-details">
+          <li>Kids Studio Class A (Ages [X–Y]): [Start Time] – [End Time]</li>
+          <li>Kids Studio Class B (Ages [Y+]): [Start Time] – [End Time]</li>
+          <li>Adult Studio Class: [Start Time] – [End Time]</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       RECITALS SECTION
+  ============================================= -->
+  <section class="section section--white" id="recitals">
+    <div class="container">
+      <h2 class="section-title">Recitals</h2>
+      <p>[Recital description — e.g. "Our student recitals are free and open to the public!"]</p>
+      <ul class="camp-details">
+        <li><strong>[Recital Name 1]:</strong> [Date], [Time] – <em>[Cost, e.g. Free!]</em></li>
+        <li><strong>[Recital Name 2]:</strong> [Date], [Time] – <em>[Cost]</em></li>
+        <li><strong>[Recital Name 3]:</strong> [Date], [Time] – <em>[Cost]</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =============================================
+       EVENTS & CONCERTS SECTION
+  ============================================= -->
+  <section class="section section--white" id="events">
+    <div class="container">
+      <h2 class="section-title">Upcoming Events &amp; Concerts</h2>
+
+      <div class="two-col">
+        <div class="col">
+          <!-- Upcoming concert / performance video embed -->
+          <div class="video-placeholder">
+            <!-- Replace with YouTube iframe embed:
+            <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/[VIDEO_ID]"
+              title="[Video Title]" frameborder="0"
+              allowfullscreen></iframe>
+            -->
+            <span>YouTube Video Embed<br/>[Replace with iframe]</span>
+          </div>
+        </div>
+        <div class="col">
+          <h4 class="rate-category">[Event Name 1]: [Type of Event]</h4>
+          <ul class="camp-details">
+            <li>[Day], [Month] [Date], [YEAR], [Time] – <em>[Cost]</em></li>
+          </ul>
+
+          <h4 class="rate-category">[Event Name 2]: [Type of Event]</h4>
+          <ul class="camp-details">
+            <li>[Day], [Month] [Date], [YEAR], [Time] – <em>[Cost]</em></li>
+          </ul>
+
+          <h4 class="rate-category">[Event Name 3]: [Type of Event]</h4>
+          <ul class="camp-details">
+            <li>[Day], [Month] [Date], [YEAR], [Time] – <em>[Cost]</em></li>
+          </ul>
+
+          <h4 class="rate-category">[Event Name 4]: [Type of Event]</h4>
+          <ul class="camp-details">
+            <li>[Day], [Month] [Date], [YEAR], [Time] – <em>[Cost]</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       ENROLLMENT & CONTACT SECTION
+  ============================================= -->
+  <section class="section section--orange" id="contact">
+    <div class="container">
+      <h2 class="section-title section-title--white">Enrollment &amp; Contact Forms</h2>
+      <p class="section-body">
+        Please select an option below to enroll at [STUDIO NAME] or get in touch with us!
+      </p>
+
+      <div class="two-col contact-grid">
+
+        <!-- Left: Map + Contact Info -->
+        <div class="col">
+          <div class="map-placeholder">
+            <!-- Replace with Google Maps embed or static map image -->
+            <span>Map Embed<br/>[Google Maps iframe]</span>
+          </div>
+          <address class="contact-address">
+            <a href="https://maps.google.com/?q=[STREET_ADDRESS]" target="_blank" rel="noopener">
+              [STREET ADDRESS]<br />
+              [CITY, STATE ZIP]
+            </a><br />
+            <a href="tel:[PHONE_NUMBER]">[PHONE NUMBER]</a><br />
+            <a href="mailto:[EMAIL_ADDRESS]">[EMAIL ADDRESS]</a><br />
+            <br />
+            [STUDIO NAME] is open by appointment only.
+          </address>
+        </div>
+
+        <!-- Right: Newsletter Signup -->
+        <div class="col">
+          <h3 class="form-heading">[STUDIO NAME] News</h3>
+          <p>Stay up-to-date on new class offerings, upcoming concerts &amp; events, faculty recommendations, community news, &amp; more!</p>
+
+          <form class="contact-form" action="#" method="post">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Your last name" required />
+
+            <label for="email">Email address:</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" required />
+
+            <button type="submit" class="btn btn--primary">SIGN UP</button>
+          </form>
+
+          <hr class="divider divider--light" />
+
+          <h3 class="form-heading">Enrollment Form</h3>
+          <p>Ready to enroll? Fill out our enrollment form and we will be in touch!</p>
+          <a href="#" class="btn btn--outline">ENROLL NOW</a>
+
+          <h3 class="form-heading">Contact Us</h3>
+          <p>Have a question? Send us a message!</p>
+          <a href="mailto:[EMAIL_ADDRESS]" class="btn btn--outline">CONTACT US</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer class="site-footer">
+    <p>&copy; [STUDIO NAME] [YEAR]</p>
+  </footer>
+
+  <!-- =============================================
+       NEWSLETTER POPUP MODAL
+  ============================================= -->
+  <div class="modal-overlay" id="newsletterModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close newsletter popup">&times;</button>
+
+      <div class="modal-logo">
+        <span>[STUDIO<br/>NAME]</span>
+      </div>
+
+      <h2 class="modal-title" id="modalTitle">[STUDIO NAME] NEWS</h2>
+      <p class="modal-subtitle">
+        Stay up-to-date on new class offerings, upcoming concerts &amp; events, faculty recommendations, community news, &amp; more!
+      </p>
+
+      <button class="btn btn--primary btn--full" id="modalSubscribe">SUBSCRIBE</button>
+      <button class="btn btn--ghost btn--full" id="modalNoThanks">No thanks</button>
+    </div>
+  </div>
+
+  <!-- =============================================
+       NEWSLETTER TOAST / INLINE TICKER
+       (bottom-left pill — "STUDIO NEWS")
+  ============================================= -->
+  <div class="news-ticker" id="newsTicker">
+    <button class="news-ticker-close" id="newsTickerClose">&#10005;</button>
+    <span>[STUDIO NAME] NEWS</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

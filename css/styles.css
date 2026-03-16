@@ -1,0 +1,909 @@
+/* ==============================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   Update these variables to rebrand the site.
+   ============================================== */
+:root {
+  /* Colors */
+  --color-primary:        #e8621a;   /* Main orange */
+  --color-primary-dark:   #c0501a;   /* Darker orange (nav, hover states) */
+  --color-primary-deeper: #a03c0e;   /* Deepest orange (about section) */
+  --color-accent:         #e8621a;   /* Link / highlight orange */
+  --color-announcement:   #8b2500;   /* Dark red announcement bar */
+  --color-white:          #ffffff;
+  --color-text-dark:      #222222;
+  --color-text-light:     #ffffff;
+  --color-placeholder-bg: #d4d4d4;   /* Grey for image placeholders */
+  --color-border-light:   rgba(255,255,255,0.3);
+
+  /* Typography */
+  --font-primary:   'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-size-base: 16px;
+  --line-height:    1.6;
+
+  /* Spacing */
+  --spacing-xs:   0.5rem;
+  --spacing-sm:   1rem;
+  --spacing-md:   2rem;
+  --spacing-lg:   4rem;
+
+  /* Layout */
+  --container-max: 1200px;
+  --nav-height:    56px;
+
+  /* Borders */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ==============================================
+   RESET & BASE
+   ============================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--font-size-base);
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text-dark);
+  line-height: var(--line-height);
+  background: var(--color-white);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ==============================================
+   ANNOUNCEMENT BAR
+   ============================================== */
+.announcement-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  background: var(--color-announcement);
+  color: var(--color-white);
+  padding: 0.5rem var(--spacing-md);
+  font-size: 0.875rem;
+  position: relative;
+  text-align: center;
+}
+
+.announcement-tag {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.announcement-text {
+  white-space: nowrap;
+}
+
+.announcement-link {
+  color: var(--color-white);
+  text-decoration: underline;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.announcement-close {
+  position: absolute;
+  right: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.25rem;
+}
+
+.announcement-close:hover {
+  opacity: 0.8;
+}
+
+/* ==============================================
+   HERO SECTION
+   ============================================== */
+.hero {
+  position: relative;
+  background: var(--color-white);
+  min-height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Social Icons — top right corner */
+.social-bar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.4rem;
+  z-index: 10;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.2s;
+}
+
+.social-icon:hover {
+  opacity: 0.85;
+}
+
+.social-icon img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1); /* makes SVG icons white */
+}
+
+/* Decorative music notes scattered across hero */
+.hero-notes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.note {
+  position: absolute;
+  color: var(--color-primary);
+  font-size: clamp(3rem, 8vw, 9rem);
+  line-height: 1;
+  opacity: 0.85;
+  user-select: none;
+}
+
+.note-1 { top:  2%;  left:  2%;  font-size: clamp(4rem, 9vw, 11rem); }
+.note-2 { top:  5%;  left: 13%;  font-size: clamp(3rem, 7vw, 8rem);  }
+.note-3 { top:  1%;  left: 32%;  font-size: clamp(2.5rem,5vw, 6rem); opacity:0.5; }
+.note-4 { top:  3%;  right: 28%; font-size: clamp(2rem,  4vw, 5rem); opacity:0.4; }
+.note-5 { top: 40%;  left:  2%;  font-size: clamp(2rem,  5vw, 6rem); opacity:0.6; }
+.note-6 { top: 55%;  left: 18%;  font-size: clamp(3.5rem,7vw, 9rem); }
+.note-7 { top: 10%;  right:  5%; font-size: clamp(4rem,  9vw,11rem); }
+.note-8 { top: 50%;  right: 10%; font-size: clamp(3rem,  6vw, 8rem); opacity:0.7; }
+
+/* Studio Logo Badge */
+.hero-logo {
+  position: relative;
+  z-index: 5;
+  width: clamp(140px, 18vw, 220px);
+  height: clamp(140px, 18vw, 220px);
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-logo-text {
+  color: var(--color-white);
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0.5rem;
+}
+
+/* ==============================================
+   MAIN NAVIGATION
+   ============================================== */
+.main-nav {
+  background: var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.nav-list > li {
+  position: relative;
+}
+
+.nav-list > li > a {
+  display: block;
+  padding: 1.05rem 0.85rem;
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.nav-list > li > a:hover,
+.nav-list > li:focus-within > a {
+  background: var(--color-primary-dark);
+}
+
+/* Dropdown menus */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-primary-dark);
+  min-width: 180px;
+  box-shadow: var(--shadow-md);
+  z-index: 200;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown {
+  display: block;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.65rem 1rem;
+  color: var(--color-white);
+  font-size: 0.8rem;
+  transition: background 0.15s;
+}
+
+.dropdown li a:hover {
+  background: var(--color-primary-deeper);
+}
+
+/* ==============================================
+   LAYOUT UTILITIES
+   ============================================== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-lg) 0;
+}
+
+.section--orange {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.section--orange a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.section--white {
+  background: var(--color-white);
+  color: var(--color-text-dark);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+/* ==============================================
+   SECTION TYPOGRAPHY
+   ============================================== */
+.section-headline {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-sm);
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: bold;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-dark);
+}
+
+.section-title--white {
+  color: var(--color-white);
+}
+
+.section-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 900px;
+}
+
+.col-heading {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.col-heading--orange {
+  color: var(--color-primary);
+}
+
+.section--orange .col-heading--orange {
+  color: var(--color-white);
+}
+
+/* ==============================================
+   PHOTO ROW (About Gallery)
+   ============================================== */
+.photo-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: var(--spacing-md);
+}
+
+.photo-item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 280px;
+  background: var(--color-placeholder-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* ==============================================
+   SERVICES & RATES
+   ============================================== */
+.instrument-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.instrument-list li {
+  margin-bottom: 0.25rem;
+}
+
+.rate-category {
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-top: var(--spacing-sm);
+  margin-bottom: 0.35rem;
+}
+
+.section--orange .rate-category {
+  color: var(--color-white);
+}
+
+.rate-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.rate-list li {
+  margin-bottom: 0.25rem;
+}
+
+.rate-note {
+  font-size: 0.85rem;
+  margin-top: var(--spacing-sm);
+  opacity: 0.85;
+}
+
+/* ==============================================
+   FACULTY GRID
+   ============================================== */
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.faculty-card {
+  /* cards sit on the orange bg — no extra card bg needed */
+}
+
+.faculty-photo-wrap {
+  margin-bottom: var(--spacing-sm);
+}
+
+.faculty-photo-wrap img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.faculty-photo-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+  font-size: 0.75rem;
+  border: 2px dashed rgba(255,255,255,0.5);
+}
+
+.faculty-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.15rem;
+  color: var(--color-white);
+}
+
+.faculty-instrument {
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: var(--spacing-sm);
+}
+
+.faculty-bio {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-white);
+}
+
+/* ==============================================
+   INFO BLOCKS
+   ============================================== */
+.info-block {
+  margin-bottom: var(--spacing-md);
+}
+
+.info-block h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.info-block ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.info-block ul li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* ==============================================
+   CAMPS & CLASSES
+   ============================================== */
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: var(--spacing-md) 0;
+}
+
+.divider--light {
+  border-color: rgba(255,255,255,0.35);
+}
+
+.subsection-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.subsection-lead {
+  margin-bottom: 0.5rem;
+}
+
+.camp-name {
+  margin-top: var(--spacing-md);
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.camp-name a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.camp-name a:hover {
+  text-decoration: underline;
+}
+
+.camp-type {
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  color: #444;
+}
+
+.camp-details {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.camp-details li {
+  margin-bottom: 0.3rem;
+}
+
+.camp-more {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+
+.camp-more:hover {
+  text-decoration: underline;
+}
+
+.link-orange {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.note-small {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: var(--spacing-sm);
+}
+
+.studio-date-block {
+  margin-bottom: var(--spacing-md);
+}
+
+.studio-date-block h4 {
+  font-weight: bold;
+  margin-bottom: 0.35rem;
+}
+
+.camps-grid .col:first-child {
+  grid-column: 1;
+}
+
+/* ==============================================
+   VIDEO PLACEHOLDER
+   ============================================== */
+.video-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  border-radius: var(--radius-sm);
+}
+
+.video-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius-sm);
+}
+
+/* ==============================================
+   CONTACT & FORMS
+   ============================================== */
+.contact-grid {
+  align-items: start;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 200px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.map-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius-sm);
+}
+
+.contact-address {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-white);
+}
+
+.contact-address a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.form-heading {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--color-white);
+  margin: var(--spacing-sm) 0 0.4rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: var(--spacing-sm);
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+.contact-form input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  background: var(--color-white);
+  color: var(--color-text-dark);
+}
+
+.contact-form input::placeholder {
+  color: #aaa;
+}
+
+/* ==============================================
+   BUTTONS
+   ============================================== */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 0.2s, color 0.2s;
+  text-align: center;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  margin-top: 0.5rem;
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+  margin-top: 0.5rem;
+}
+
+.btn--outline:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: rgba(255,255,255,0.8);
+  border-color: rgba(255,255,255,0.4);
+  margin-top: 0.4rem;
+}
+
+.btn--ghost:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.btn--full {
+  width: 100%;
+  display: block;
+}
+
+/* ==============================================
+   FOOTER
+   ============================================== */
+.site-footer {
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.85rem;
+}
+
+/* ==============================================
+   NEWSLETTER POPUP MODAL
+   ============================================== */
+.modal-overlay {
+  display: none; /* shown via JS */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1000;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0;
+}
+
+.modal-overlay.is-open {
+  display: flex;
+}
+
+.modal {
+  background: var(--color-primary);
+  color: var(--color-white);
+  width: 100%;
+  max-width: 480px;
+  border-radius: 50% 50% 0 0 / 40px 40px 0 0;
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-logo {
+  width: 80px;
+  height: 80px;
+  background: var(--color-primary-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.modal-logo span {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-white);
+  line-height: 1.2;
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.modal-subtitle {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ==============================================
+   ACTIVE NAV LINK (set by JS IntersectionObserver)
+   ============================================== */
+.nav-list a.is-active {
+  background: var(--color-primary-deeper);
+}
+
+/* ==============================================
+   NEWS TICKER (bottom-left pill)
+   ============================================== */
+.news-ticker {
+  display: none; /* shown via JS */
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.5rem 1.25rem 0.5rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow-md);
+  z-index: 500;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.news-ticker.is-visible {
+  display: flex;
+}
+
+.news-ticker-close {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-right: 0.25rem;
+  line-height: 1;
+}
